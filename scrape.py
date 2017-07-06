@@ -83,6 +83,8 @@ parser.add_argument('--messages-only', '-M', dest='messaging_only', action='stor
 
 args = parser.parse_args()
 
+args.institution = 'uis'
+
 # I've sprinkled delays around the code to ensure the script isn't spamming requests at maximum rate.
 # Each time such a delay occurs, it waits for this many seconds.
 # Feel free to increase this if you plan to run this script overnight.
