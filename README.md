@@ -77,7 +77,7 @@ If you've never touched Python before, here's how to get the script running on W
 
 10. We're now ready to run the script. In the command prompt window, write:
 
-        python scrape --institution uis
+        python scrape.py --institution uis
         
 Upon starting, it will ask you for your username and password. You should use your FEIDE/NTNU credentials for this. Type them into the command prompt window, and press enter. Note that when typing in your password, the characters are hidden.
 
