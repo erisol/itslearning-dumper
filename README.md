@@ -14,7 +14,7 @@ The following elements are downloaded by this script. Note that It's Learning ha
 Open up your terminal.
 
 1. Install homebrew:
-```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"````
+```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"```
 
 2. Install Python3:
 ```brew install python3```
