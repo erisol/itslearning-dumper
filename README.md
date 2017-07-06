@@ -1,7 +1,7 @@
-# This is a fork of https://github.com/bartvbl/itslearning-dumper.
-# I take no responsibility for any data loss or whatever might occur.
+# Extract all data from your itslearning user (University of Stavanger)
+# This is a fork of https://github.com/bartvbl/itslearning-dumper. I take no responsibility for any data loss or whatever might occur.
 
-# It's Learning Complete Backup
+# It's Learning Complete Backup for UiS
 Tool
 
 This script was written to export data from the course management system "It's Learning", as no proper method has been supplied for this previously. 
@@ -10,44 +10,11 @@ This script was written to export data from the course management system "It's L
 
 The following elements are downloaded by this script. Note that It's Learning has had an overhaul in terms of visual appearance, but did not migrate older courses to the new visual style. As such these had to be implemented separately, and are as such listed separately.
 
-To my knowledge, this list covers all major features of It's Learning.
-
-1. Internal messaging - Both the "new" and "old" inboxes are supported.
-2. Course bulletins - Both "new" and "old" flavours are downloaded. Includes comments on new-style posts. Old-style text/information widgets are also downloaded.
-3. Assignments - Includes submissions by you, and if you teach a course, submissions from students. In both cases, grading, feedback and submitted files are downloaded.
-4. Notes, Links, and Pictures - Both old-style and new-style. 
-5. Files - Any files published as part of the course.
-6. Surveys - Downloads all responses, and the It's Learning generated reports.
-7. Discussions - Downloads all threads, including most linked images.
-8. Online Tests - Download all answers submitted as a student, or all student submissions as a teacher.
-9. Projects - All content is dumped, including project bulletin messages.
-
 ## Running
-
-The easiest way of running this script is to head over to the [Releases](https://github.com/bartvbl/itslearning-dumper/releases) page and download a pre-packaged executable.
-
-Alternatively, you can follow the steps below. For detailed step-by-step instructions, see the "Beginner's user guide" section below.
 
 1. Install Python 3.4 or above (latest at the time of writing is 3.6). Make sure to check the "add to path" and "install pip" boxes in the installer.
 2. Install two python packages using pip by running `pip install lxml requests` on the command line.
-3. Run the script and let it do its thing by running `python scrape.py`. It will ask you for your username and password when you start it.
-
-## Configuration
-
-The script has a number of command line parameters available for configuring the script.
-
-For an overview over all available command line paramters, use `python scrape.py --help` or `dumper_windows.exe --help` if using a build.
-
-* `--output-dir`: Determines the location where output files will be written to. Can be a relative path to the location of the script, or an absolute path. On Windows, I cannot recommend enough to place this directory at the **ROOT** of your hard drive (C:\, D:\, etc.), since the 255 character path name limit is easily surpassed. This parameter is mandatory on a system without a graphical interface.
-* `--rate-limit-delay`: The number of seconds the script waits after each request. Ensures requests are not sent at a high rate, reducing the load on the It's Learning servers.
-* `--skip-to-course`: As mentioned above, crashes may occur. Use this index to force the script to jump to a particular course, potentially hopping over a problematic one. The index is the same as the one printed out in the terminal (1-indexed). Set to 1 to only skip downloading internal messages.
-* `--output-text-extension`: Determines the extension output text files have. The specific format of the contents of these is different in most cases, but is in most cases plaintext with fragments of HTML. You might want to change this to `.txt` if preferable.
-* `--enable-checkpoints`: Enabling this will create a small text file in the working directory which keeps track of where the script left off. If the download takes too long, you can simply quit the script, and it will allow you to catch up to where you left off (it restarts the element it left off at, which should be close enough).
-* `--institution`: Only dump the content of a single institution site. This value should either be `ntnu` or `hist`.
-* `--list`: Don't dump anything, just list all courses and projects for each institution, along with their indices, which can be used as a parameter for `--ship-to-course`.
-* `--projects-only`: Only dump projects, nothing else.
-* `--courses-only`: Only dump courses, nothing else.
-* `--messages-only`: Only dump internal messages, nothing else.
+3. Run the script and let it do its thing by running `python scrape.py --institution uis`. It will ask you for your username and password when you start it.
 
 ## Beginner's User Guide
 
@@ -84,6 +51,37 @@ Upon starting, it will ask you for your username and password. You should use yo
 And hope for the best. The script will print out what it's doing on the command prompt. It will show a message when it's done.
 
 Good luck!
+
+
+To my knowledge, this list covers all major features of It's Learning.
+
+1. Internal messaging - Both the "new" and "old" inboxes are supported.
+2. Course bulletins - Both "new" and "old" flavours are downloaded. Includes comments on new-style posts. Old-style text/information widgets are also downloaded.
+3. Assignments - Includes submissions by you, and if you teach a course, submissions from students. In both cases, grading, feedback and submitted files are downloaded.
+4. Notes, Links, and Pictures - Both old-style and new-style. 
+5. Files - Any files published as part of the course.
+6. Surveys - Downloads all responses, and the It's Learning generated reports.
+7. Discussions - Downloads all threads, including most linked images.
+8. Online Tests - Download all answers submitted as a student, or all student submissions as a teacher.
+9. Projects - All content is dumped, including project bulletin messages.
+
+## Configuration
+
+The script has a number of command line parameters available for configuring the script.
+
+For an overview over all available command line paramters, use `python scrape.py --help` or `dumper_windows.exe --help` if using a build.
+
+* `--output-dir`: Determines the location where output files will be written to. Can be a relative path to the location of the script, or an absolute path. On Windows, I cannot recommend enough to place this directory at the **ROOT** of your hard drive (C:\, D:\, etc.), since the 255 character path name limit is easily surpassed. This parameter is mandatory on a system without a graphical interface.
+* `--rate-limit-delay`: The number of seconds the script waits after each request. Ensures requests are not sent at a high rate, reducing the load on the It's Learning servers.
+* `--skip-to-course`: As mentioned above, crashes may occur. Use this index to force the script to jump to a particular course, potentially hopping over a problematic one. The index is the same as the one printed out in the terminal (1-indexed). Set to 1 to only skip downloading internal messages.
+* `--output-text-extension`: Determines the extension output text files have. The specific format of the contents of these is different in most cases, but is in most cases plaintext with fragments of HTML. You might want to change this to `.txt` if preferable.
+* `--enable-checkpoints`: Enabling this will create a small text file in the working directory which keeps track of where the script left off. If the download takes too long, you can simply quit the script, and it will allow you to catch up to where you left off (it restarts the element it left off at, which should be close enough).
+* `--institution`: Only dump the content of a single institution site. This value should either be `ntnu` or `hist`.
+* `--list`: Don't dump anything, just list all courses and projects for each institution, along with their indices, which can be used as a parameter for `--ship-to-course`.
+* `--projects-only`: Only dump projects, nothing else.
+* `--courses-only`: Only dump courses, nothing else.
+* `--messages-only`: Only dump internal messages, nothing else.
+
 
 ## Known Issues
 
