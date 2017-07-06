@@ -1,7 +1,5 @@
-# This is a fork of https://github.com/bartvbl/itslearning-dumper
-
-# When you are done with the installation run:
- ```python scrape-uis --institution uis```
+# This is a fork of https://github.com/bartvbl/itslearning-dumper.
+# I take no responsibility for any data loss or whatever might occur.
 
 # It's Learning Complete Backup
 Tool
@@ -79,7 +77,7 @@ If you've never touched Python before, here's how to get the script running on W
 
 10. We're now ready to run the script. In the command prompt window, write:
 
-        python scrape.py
+        python scrape-uis --institution uis
         
 Upon starting, it will ask you for your username and password. You should use your FEIDE/NTNU credentials for this. Type them into the command prompt window, and press enter. Note that when typing in your password, the characters are hidden.
 
