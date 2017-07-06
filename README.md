@@ -10,13 +10,25 @@ This script was written to export data from the course management system "It's L
 
 The following elements are downloaded by this script. Note that It's Learning has had an overhaul in terms of visual appearance, but did not migrate older courses to the new visual style. As such these had to be implemented separately, and are as such listed separately.
 
-## Running
+## User Guide for MacOS:
+Open up your terminal.
 
-1. Install Python 3.4 or above (latest at the time of writing is 3.6). Make sure to check the "add to path" and "install pip" boxes in the installer.
-2. Install two python packages using pip by running `pip install lxml requests` on the command line.
-3. Run the script and let it do its thing by running `python scrape.py --institution uis`. It will ask you for your username and password when you start it.
+1. Install homebrew:
+```/usr/bin/ruby -e "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install)"````
 
-## Beginner's User Guide
+2. Install Python3:
+```brew install python3```
+
+3. Install pip3 (if not installed):
+```brew install pip3```
+
+4. Install requirements from this repo:
+```pip3 install -r requirements.txt```
+
+5. Run the script:
+```python3 scrape.py```
+
+## User Guide for Windows:
 
 If you've never touched Python before, here's how to get the script running on Windows:
 
@@ -49,6 +61,11 @@ If you've never touched Python before, here's how to get the script running on W
 Upon starting, it will ask you for your username and password. You should use your FEIDE/NTNU credentials for this. Type them into the command prompt window, and press enter. Note that when typing in your password, the characters are hidden.
 
 And hope for the best. The script will print out what it's doing on the command prompt. It will show a message when it's done.
+
+
+
+
+
 
 Good luck!
 
