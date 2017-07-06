@@ -168,90 +168,119 @@ innsida = 'https://innsida.ntnu.no'
 
 feide_base_url = 'https://idp.feide.no/simplesaml/module.php/feide/login.php'
 
-institutions = ['hist', 'ntnu']
+institutions = ['hist','ntnu','uis']
 
 itslearning_gateway_url = {
+	'uis': 	'https://uis.itslearning.com/Index.aspx',
 	'ntnu': 'https://innsida.ntnu.no/sso?target=itslearning',
 	'hist': 'https://hist.itslearning.com/Index.aspx'}
+
+
+uis_login_postback_target = 'https://uis.itslearning.com/'
 hist_login_postback_target = 'https://hist.itslearning.com/'
 
-
 itsleaning_course_list = {
+	'uis': 	'https://uis.itslearning.com/Course/AllCourses.aspx',
 	'ntnu': 'https://ntnu.itslearning.com/Course/AllCourses.aspx', 
 	'hist': 'https://hist.itslearning.com/Course/AllCourses.aspx'}
 itslearning_course_base_url = {
+	'uis': 'https://uis.itslearning.com/ContentArea/ContentArea.aspx?LocationID={}&LocationType={}', 
 	'ntnu': 'https://ntnu.itslearning.com/ContentArea/ContentArea.aspx?LocationID={}&LocationType={}', 
 	'hist': 'https://hist.itslearning.com/ContentArea/ContentArea.aspx?LocationID={}&LocationType={}'}
 itslearning_login_landing_page = {
+	'uis': 'https://uis.itslearning.com/DashboardMenu.aspx?LocationType=Hierarchy',
 	'ntnu': 'https://ntnu.itslearning.com/DashboardMenu.aspx',
 	'hist': 'https://hist.itslearning.com/DashboardMenu.aspx'}
 itslearning_course_bulletin_base_url = {
+	'uis': 'https://uis.itslearning.com/Course/course.aspx?CourseId=', 
 	'ntnu': 'https://ntnu.itslearning.com/Course/course.aspx?CourseId=', 
 	'hist': 'https://hist.itslearning.com/Course/course.aspx?CourseId='}
 itslearning_project_bulletin_base_url = {
+	'uis': 'https://uis.itslearning.com/Project/project.aspx?ProjectId={}&BulletinBoardAll=True', 
 	'ntnu': 'https://ntnu.itslearning.com/Project/project.aspx?ProjectId={}&BulletinBoardAll=True', 
 	'hist': 'https://hist.itslearning.com/Project/project.aspx?ProjectId={}&BulletinBoardAll=True'}
 itslearning_bulletin_next_url = {
+	'uis': 'https://uis.itslearning.com/Bulletins/Page?courseId={}&boundaryLightBulletinId={}&boundaryLightBulletinCreatedTicks={}', 
 	'ntnu': 'https://ntnu.itslearning.com/Bulletins/Page?courseId={}&boundaryLightBulletinId={}&boundaryLightBulletinCreatedTicks={}', 
 	'hist': 'https://hist.itslearning.com/Bulletins/Page?courseId={}&boundaryLightBulletinId={}&boundaryLightBulletinCreatedTicks={}'}
 itslearning_folder_base_url = {
+	'uis': 'https://uis.itslearning.com/Folder/processfolder.aspx?FolderID=', 
 	'ntnu': 'https://ntnu.itslearning.com/Folder/processfolder.aspx?FolderID=', 
 	'hist': 'https://hist.itslearning.com/Folder/processfolder.aspx?FolderID='}
 itslearning_file_base_url = {
+	'uis': 'https://uis.itslearning.com/File/fs_folderfile.aspx?FolderFileID=', 
 	'ntnu': 'https://ntnu.itslearning.com/File/fs_folderfile.aspx?FolderFileID=', 
 	'hist': 'https://hist.itslearning.com/File/fs_folderfile.aspx?FolderFileID='}
 itslearning_assignment_base_url = {
+	'uis': 'https://uis.itslearning.com/essay/read_essay.aspx?EssayID=', 
 	'ntnu': 'https://ntnu.itslearning.com/essay/read_essay.aspx?EssayID=', 
 	'hist': 'https://hist.itslearning.com/essay/read_essay.aspx?EssayID='}
 itslearning_note_base_url = {
+	'uis': 'https://uis.itslearning.com/note/View_Note.aspx?NoteID=', 
 	'ntnu': 'https://ntnu.itslearning.com/note/View_Note.aspx?NoteID=', 
 	'hist': 'https://hist.itslearning.com/note/View_Note.aspx?NoteID='}
 itslearning_discussion_base_url = {
+	'uis': 'https://uis.itslearning.com/discussion/list_discussions.aspx?DiscussionID=', 
 	'ntnu': 'https://ntnu.itslearning.com/discussion/list_discussions.aspx?DiscussionID=', 
 	'hist': 'https://hist.itslearning.com/discussion/list_discussions.aspx?DiscussionID='}
 itslearning_weblink_base_url = {
+	'uis': 'https://uis.itslearning.com/weblink/weblink.aspx?WebLinkID=',
 	'ntnu': 'https://ntnu.itslearning.com/weblink/weblink.aspx?WebLinkID=', 
 	'hist': 'https://hist.itslearning.com/weblink/weblink.aspx?WebLinkID='}
 itslearning_weblink_header_base_url = {
+	'uis': 'https://uis.itslearning.com/weblink/weblink_header.aspx?WebLinkID=' , 
 	'ntnu': 'https://ntnu.itslearning.com/weblink/weblink_header.aspx?WebLinkID=' , 
 	'hist': 'https://hist.itslearning.com/weblink/weblink_header.aspx?WebLinkID=' }
 itslearning_learning_tool_base_url = {
+	'uis': 'https://uis.itslearning.com/LearningToolElement/ViewLearningToolElement.aspx?LearningToolElementId=', 
 	'ntnu': 'https://ntnu.itslearning.com/LearningToolElement/ViewLearningToolElement.aspx?LearningToolElementId=', 
 	'hist': 'https://hist.itslearning.com/LearningToolElement/ViewLearningToolElement.aspx?LearningToolElementId='}
 itslearning_comment_service = {
+	'uis': 'https://uis.itslearning.com/Services/CommentService.asmx/GetOldComments?sourceId={}&sourceType={}&commentId={}&count={}&numberOfPreviouslyReadItemsToDisplay={}&usePersonNameFormatLastFirst={}', 
 	'ntnu': 'https://ntnu.itslearning.com/Services/CommentService.asmx/GetOldComments?sourceId={}&sourceType={}&commentId={}&count={}&numberOfPreviouslyReadItemsToDisplay={}&usePersonNameFormatLastFirst={}', 
 	'hist': 'https://hist.itslearning.com/Services/CommentService.asmx/GetOldComments?sourceId={}&sourceType={}&commentId={}&count={}&numberOfPreviouslyReadItemsToDisplay={}&usePersonNameFormatLastFirst={}'}
 itslearning_root_url = {
+	'uis': 'https://uis.itslearning.com', 
 	'ntnu': 'https://ntnu.itslearning.com', 
 	'hist': 'https://hist.itslearning.com'}
 itslearning_not_found = {
+	'uis': 'https://uis.itslearning.com/not_exist.aspx', 
 	'ntnu': 'https://ntnu.itslearning.com/not_exist.aspx', 
 	'hist': 'https://hist.itslearning.com/not_exist.aspx'}
 itslearning_test_base_url = {
+	'uis': 'https://uis.itslearning.com/test/view_survey_list.aspx?TestID=', 
 	'ntnu': 'https://ntnu.itslearning.com/test/view_survey_list.aspx?TestID=', 
 	'hist': 'https://hist.itslearning.com/test/view_survey_list.aspx?TestID='}
 old_messaging_api_url = {
+	'uis': 'https://uis.itslearning.com/Messages/InternalMessages.aspx?MessageFolderId={}', 
 	'ntnu': 'https://ntnu.itslearning.com/Messages/InternalMessages.aspx?MessageFolderId={}', 
 	'hist': 'https://hist.itslearning.com/Messages/InternalMessages.aspx?MessageFolderId={}'}
 itslearning_picture_url = {
+	'uis': 'https://uis.itslearning.com/picture/view_picture.aspx?PictureID={}&FolderID=-1&ChildID=-1&DashboardHierarchyID=-1&DashboardName=&ReturnUrl=', 
 	'ntnu': 'https://ntnu.itslearning.com/picture/view_picture.aspx?PictureID={}&FolderID=-1&ChildID=-1&DashboardHierarchyID=-1&DashboardName=&ReturnUrl=', 
 	'hist': 'https://hist.itslearning.com/picture/view_picture.aspx?PictureID={}&FolderID=-1&ChildID=-1&DashboardHierarchyID=-1&DashboardName=&ReturnUrl='}
 itslearning_online_test_url = {
+	'uis': 'https://uis.itslearning.com/Ntt/EditTool/ViewTest.aspx?TestID={}',
 	'ntnu': 'https://ntnu.itslearning.com/Ntt/EditTool/ViewTest.aspx?TestID={}',
 	'hist': 'https://hist.itslearning.com/Ntt/EditTool/ViewTest.aspx?TestID={}'}
 itslearning_online_test_details_postback_url = {
+	'uis': 'https://uis.itslearning.com/Ntt/EditTool/ViewTestResults.aspx?TestResultId={}',
 	'ntnu': 'https://ntnu.itslearning.com/Ntt/EditTool/ViewTestResults.aspx?TestResultId={}',
 	'hist': 'https://hist.itslearning.com/Ntt/EditTool/ViewTestResults.aspx?TestResultId={}'}
 itslearning_new_messaging_api_url = {
+	'uis': 'https://uis.itslearning.com/restapi/personal/instantmessages/messagethreads/v1?threadPage={}&maxThreadCount=15',
 	'ntnu': 'https://ntnu.itslearning.com/restapi/personal/instantmessages/messagethreads/v1?threadPage={}&maxThreadCount=15',
 	'hist': 'https://hist.itslearning.com/restapi/personal/instantmessages/messagethreads/v1?threadPage={}&maxThreadCount=15'}
 itslearning_all_projects_url = {
+	'uis': 'https://uis.itslearning.com/Project/AllProjects.aspx',
 	'ntnu': 'https://ntnu.itslearning.com/Project/AllProjects.aspx',
 	'hist': 'https://hist.itslearning.com/Project/AllProjects.aspx'}
 base64_png_image_url = {
+	'uis': 'https://uis.itslearning.comdata:image/png;base64,',
 	'ntnu': 'https://ntnu.itslearning.comdata:image/png;base64,',
 	'hist': 'https://hist.itslearning.comdata:image/png;base64,'}
 base64_jpeg_image_url = {
+	'uis': 'https://uis.itslearning.comdata:image/jpeg;base64,',
 	'ntnu': 'https://ntnu.itslearning.comdata:image/jpeg;base64,',
 	'hist': 'https://hist.itslearning.comdata:image/jpeg;base64,'}
 
@@ -2012,11 +2041,20 @@ if os.path.exists(progress_file_location) and not args.do_listing:
 with requests.Session() as session:
 
 	print('Querying Innsida..')
+	if institution == 'uis':
+		innsida = 'https://idp.feide.no/simplesaml/module.php/feide/login.php?org=uis.no&asLen=237&AuthState=_c09bc6d5eeb5eca682c634b3125c49bdcf77f7b715%3Ahttps%3A%2F%2Fidp.feide.no%2Fsimplesaml%2Fsaml2%2Fidp%2FSSOService.php%3Fspentityid%3Durn%253Amace%253Afeide.no%253Aservices%253Acom.itslearning%26cookieTime%3D1499340818%26RelayState%3DItsL1eyJjIjpudWxsLCJuIjoidWlzIiwicyI6MH01&submit=Fortsett+%C2%BB'
+	
 	response = session.get(innsida, params=innsida_login_parameters, allow_redirects=True)
 
 	login_page = fromstring(response.text)
 
 	login_form = login_page.forms[0]
+
+	if institution == 'uis':
+		auth = login_form.xpath('//input[@name="AuthState"]/@value')[0]
+		response = session.get('https://idp.feide.no/simplesaml/module.php/feide/login.php?org=uis.no&asLen=184&AuthState='+auth, allow_redirects=True)
+		login_page = fromstring(response.text)
+		login_form = login_page.forms[0]
 
 	credentials_correct = False
 
@@ -2025,7 +2063,7 @@ with requests.Session() as session:
 	print('To continue, the script needs to know your FEIDE login credentials.')
 	print('To do so, type in your NTNU/FEIDE username, press Enter, then type in your password, and press Enter again.')
 	print()
-	print('Both content from the HiST and NTNU sites is downloaded.')
+	print('Both content from the UiS, HiST and NTNU sites is downloaded.')
 	print('Access to each of these will be detected automatically by the program.')
 	print()
 	print('NOTE: when the program asks for your password, for your security the characters you type are hidden.')
@@ -2033,7 +2071,7 @@ with requests.Session() as session:
 	print()
 
 	while not credentials_correct:
-		print('Please enter your NTNU/FEIDE username and password.')
+		print('Please enter your' + institution.upper() + 'username and password.')
 
 		username = input('Username: ')
 		password = getpass.getpass(prompt='Password: ')
@@ -2054,7 +2092,7 @@ with requests.Session() as session:
 		else:
 			credentials_correct = True
 
-	innsida_main_page = do_feide_relay(session, relay_response)
+	do_feide_relay(session, relay_response)
 
 	for institution in institutions:
 
@@ -2080,6 +2118,19 @@ with requests.Session() as session:
 				hist_first_relay_response = do_feide_relay(session, hist_postback_response)
 				hist_second_relay_response = do_feide_relay(session, hist_first_relay_response)
 				has_access_to_institution = itslearning_login_landing_page[institution] in hist_second_relay_response.url
+			except Exception:
+				# If anything unexpected happens, it's likely we've stumbled across a case of being denied access
+				has_access_to_institution = False
+				
+		elif institution == 'uis':
+			try:
+				uis_login_page = session.get(itslearning_gateway_url[institution], allow_redirects = True)
+				uis_login_page_document = fromstring(uis_login_page.text)
+				postback_action = 'ctl00$ContentPlaceHolder1$federatedLoginButtons$ctl00$ctl00'
+				uis_postback_response = doPostBack(uis_login_postback_target, postback_action, uis_login_page_document)
+				uis_first_relay_response = do_feide_relay(session, uis_postback_response)
+				hist_second_relay_response = do_feide_relay(session, uis_first_relay_response)
+				has_access_to_institution = itslearning_login_landing_page[institution] in uis_second_relay_response.url
 			except Exception:
 				# If anything unexpected happens, it's likely we've stumbled across a case of being denied access
 				has_access_to_institution = False
@@ -2127,7 +2178,8 @@ with requests.Session() as session:
 
 		# If it is desirable to skip to a particular course, also skip downloading the messages again
 		if skip_to_course_with_index == 0 and catch_up_directions is None and not args.courses_only and not args.projects_only:
-			processMessaging(institution, pathThusFar, session)
+			if institution not 'uis':
+				processMessaging(institution, pathThusFar, session)
 
 		if not args.messaging_only and not args.courses_only:
 			print('Dumping Projects')
