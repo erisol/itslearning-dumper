@@ -1,3 +1,4 @@
+## Windows users: Unzip scrape.zip and run ```scrape.exe```
 # Extract all data from your itslearning user (University of Stavanger)
 # This is a fork of https://github.com/bartvbl/itslearning-dumper. I take no responsibility for any data loss or whatever might occur.
 
