@@ -1,4 +1,7 @@
-# It's Learning Complete Backup Tool
+# This is a fork of https://github.com/bartvbl/itslearning-dumper
+
+# It's Learning Complete Backup
+Tool
 
 This script was written to export data from the course management system "It's Learning", as no proper method has been supplied for this previously. 
 
