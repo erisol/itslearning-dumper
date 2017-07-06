@@ -1,7 +1,7 @@
 # This is a fork of https://github.com/bartvbl/itslearning-dumper
 
 # When you are done with the installation run:
- ```scrape-uis --institution uis```
+ ```python scrape-uis --institution uis```
 
 # It's Learning Complete Backup
 Tool
