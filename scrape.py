@@ -2041,7 +2041,7 @@ if os.path.exists(progress_file_location) and not args.do_listing:
 with requests.Session() as session:
 
 	print('Querying Innsida..')
-	if institution == 'uis':
+	if args.institution == 'uis':
 		innsida = 'https://idp.feide.no/simplesaml/module.php/feide/login.php?org=uis.no&asLen=237&AuthState=_c09bc6d5eeb5eca682c634b3125c49bdcf77f7b715%3Ahttps%3A%2F%2Fidp.feide.no%2Fsimplesaml%2Fsaml2%2Fidp%2FSSOService.php%3Fspentityid%3Durn%253Amace%253Afeide.no%253Aservices%253Acom.itslearning%26cookieTime%3D1499340818%26RelayState%3DItsL1eyJjIjpudWxsLCJuIjoidWlzIiwicyI6MH01&submit=Fortsett+%C2%BB'
 	
 	response = session.get(innsida, params=innsida_login_parameters, allow_redirects=True)
@@ -2049,8 +2049,7 @@ with requests.Session() as session:
 	login_page = fromstring(response.text)
 
 	login_form = login_page.forms[0]
-
-	if institution == 'uis':
+	if args.institution == 'uis':
 		auth = login_form.xpath('//input[@name="AuthState"]/@value')[0]
 		response = session.get('https://idp.feide.no/simplesaml/module.php/feide/login.php?org=uis.no&asLen=184&AuthState='+auth, allow_redirects=True)
 		login_page = fromstring(response.text)
@@ -2061,7 +2060,7 @@ with requests.Session() as session:
 	print()
 	print('----------')
 	print('To continue, the script needs to know your FEIDE login credentials.')
-	print('To do so, type in your NTNU/FEIDE username, press Enter, then type in your password, and press Enter again.')
+	print('To do so, type in your FEIDE username, press Enter, then type in your password, and press Enter again.')
 	print()
 	print('Both content from the UiS, HiST and NTNU sites is downloaded.')
 	print('Access to each of these will be detected automatically by the program.')
@@ -2071,7 +2070,7 @@ with requests.Session() as session:
 	print()
 
 	while not credentials_correct:
-		print('Please enter your' + institution.upper() + 'username and password.')
+		print('Please enter your ' + args.institution.upper() + ' username and password.')
 
 		username = input('Username: ')
 		password = getpass.getpass(prompt='Password: ')
@@ -2097,6 +2096,7 @@ with requests.Session() as session:
 	for institution in institutions:
 
 		print('Autodetecting access to', institution.upper())
+		instituion = args.institution
 
 		has_access_to_institution = False
 		if institution == 'ntnu':
@@ -2129,7 +2129,7 @@ with requests.Session() as session:
 				postback_action = 'ctl00$ContentPlaceHolder1$federatedLoginButtons$ctl00$ctl00'
 				uis_postback_response = doPostBack(uis_login_postback_target, postback_action, uis_login_page_document)
 				uis_first_relay_response = do_feide_relay(session, uis_postback_response)
-				hist_second_relay_response = do_feide_relay(session, uis_first_relay_response)
+				uis_second_relay_response = do_feide_relay(session, uis_first_relay_response)
 				has_access_to_institution = itslearning_login_landing_page[institution] in uis_second_relay_response.url
 			except Exception:
 				# If anything unexpected happens, it's likely we've stumbled across a case of being denied access
@@ -2178,7 +2178,7 @@ with requests.Session() as session:
 
 		# If it is desirable to skip to a particular course, also skip downloading the messages again
 		if skip_to_course_with_index == 0 and catch_up_directions is None and not args.courses_only and not args.projects_only:
-			if institution not 'uis':
+			if args.institution != 'uis':
 				processMessaging(institution, pathThusFar, session)
 
 		if not args.messaging_only and not args.courses_only:
